@@ -71,7 +71,6 @@ export default function WeatherMap({ cities, focusedCity }) {
                                 <IconComponent color={iconData.color} size={20} />
                             </div>
                             <div className="marker-temp">{Math.round(city.main.temp)}&deg;</div>
-                            {city.name === 'Madrid' && <button className="marker-btn">See detail</button>}
                         </div>
                     );
 

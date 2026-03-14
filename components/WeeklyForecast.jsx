@@ -51,7 +51,7 @@ export default function WeeklyForecast({ forecast }) {
 
     return (
         <div className="weekly-forecast">
-            <h2 className="section-title">7-DAY FORECAST</h2>
+            <h2 className="section-title">5-DAY FORECAST</h2>
             <ul className="forecast-list">
                 {weeklyItems.map((item, index) => (
                     <li key={index} className="day-item">
