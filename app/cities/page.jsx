@@ -67,9 +67,9 @@ export default function Cities() {
         <main className="main-content">
             <SearchBar />
 
-            <div className="cities-layout" style={{ display: 'flex', gap: '25px', marginTop: '10px' }}>
+            <div className="cities-layout">
                 {/* Left Column: Cities List */}
-                <div className="cities-list-section" style={{ flex: 1.8, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div className="cities-list-section">
                     {citiesWeather.map((city, index) => {
                         const iconCode = city.weather[0].icon.substring(0, 2);
                         const { icon: Icon, color } = iconMap[iconCode] || { icon: Cloud, color: '#9399A2' };
@@ -79,16 +79,6 @@ export default function Cities() {
                             <div
                                 key={index}
                                 className={`city-card-new ${isActive ? 'active' : ''}`}
-                                style={{
-                                    backgroundColor: '#1b2635',
-                                    borderRadius: '16px',
-                                    padding: '16px 22px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    cursor: 'pointer',
-                                    border: isActive ? '2px solid #0095FF' : '2px solid transparent'
-                                }}
                                 onClick={() => updateActiveCity(city.name)}
                             >
                                 <div className="city-card-left" style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
@@ -112,10 +102,10 @@ export default function Cities() {
                 </div>
 
                 {/* Right Column: Details */}
-                <div className="city-detail-section" style={{ flex: 1.2 }}>
+                <div className="city-detail-section">
                     {selectedWeather && (
                         <>
-                            <div className="detail-main" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '25px' }}>
+                            <div className="detail-main">
                                 <div className="detail-name-section">
                                     <h2 style={{ fontSize: '28px', fontWeight: '700' }}>{selectedWeather.name}</h2>
                                     <p style={{ color: 'var(--text-muted)', fontSize: '12px' }}>Humidity: {selectedWeather.main.humidity}%</p>
